@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<script src="js/calendarcontrol.js"></script>
+<script>
+var md = new CalendarControl();
+</script>
+</head>
+<body>
+
+<input type="text" name="date" id="date_select">
+<i class="fa fa-calendar" aria-hidden="true" onclick="md.render('calendar_control');" style="color:red"></i>
+<div id="calendar_control" style="visibility:hidden">
+<a href="#" id="prev" onclick="md.getPreviousMonth();">Prev&nbsp;</a>
+<span id="month"></span>
+<a href="#" id="next" onclick="md.getNextMonth();">Next&nbsp;</a>
+<table id="monthlyview">
+<thead id="thead">
+</thead>
+<tbody id="tbody">
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
