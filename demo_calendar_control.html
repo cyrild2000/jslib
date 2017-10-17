@@ -12,9 +12,9 @@ var md = new CalendarControl();
 <input type="text" name="date" id="date_select">
 <i class="fa fa-calendar" aria-hidden="true" onclick="md.render('calendar_control');" style="color:red"></i>
 <div id="calendar_control" style="visibility:hidden">
-<a href="#" id="prev" onclick="md.getPreviousMonth();">Prev&nbsp;</a>
-<span id="month"></span>
-<a href="#" id="next" onclick="md.getNextMonth();">Next&nbsp;</a>
+<a href="#" id="prev" onclick="md.getPreviousMonth();" style="background-color:lightgray;text-align:center;font:14pw arial,serif">Prev&nbsp;</a>
+<span id="month" style="background-color:lightgray;text-align:center;font:14pw arial,serif"></span>
+<a href="#" id="next" onclick="md.getNextMonth();" style="background-color:lightgray;text-align:center;font:14pw arial,serif">Next&nbsp;</a>
 <table id="monthlyview">
 <thead id="thead">
 </thead>

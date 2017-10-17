@@ -1,9 +1,9 @@
 function CalendarControl() {
 	
 	this.date = new Date();
-	this.months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"];
+	this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	this.maxdays = [31,28,31,30,31,30,31,31,30,31,30,31];
-	this.days = ["DI","LU","MA","ME","JE","VE","SA"];
+	this.days = ["SU","MO","TU","WE","TH","FR","SA"];
 
 	this.getMonth = function() {
 		return this.date.getMonth();
@@ -20,6 +20,12 @@ function CalendarControl() {
 	this.setDate = function(year, month) {
 		this.date = new Date(year, month);
 	},
+
+	this.setLeapYear = function(year){
+		if((year % 4 == 0 & year % 100 != 0) | (year % 400 == 0)) {
+			maxdays[1] = 29;
+		}	
+	}
 
 	this.getPreviousMonth = function() {
 		if(this.date.getMonth() == 0) {
@@ -105,6 +111,8 @@ function CalendarControl() {
 					td.style.backgroundColor = "#F5F5F5";
 					td.style.border = "1px solid black";
 					td.style.textAlign = "center";
+					td.id = new Intl.DateTimeFormat("en-GB").format(dates[i]);
+					td.onclick = function() { var e = document.getElementById("date_select"); e.value = this.id; document.getElementById("calendar_control").style.visibility = 'hidden'; }
 					child = document.createTextNode(i);
 					td.appendChild(child);
 					tr.appendChild(td);
@@ -124,6 +132,8 @@ function CalendarControl() {
 					td.style.backgroundColor = "#F5F5F5";
 					td.style.border = "1px solid black";
 					td.style.textAlign = "center";
+					td.id = new Intl.DateTimeFormat("en-GB").format(dates[i - firstday]);
+					td.onclick = function() { var e = document.getElementById("date_select"); e.value = this.id; document.getElementById("calendar_control").style.visibility = 'hidden'; }
 					child = document.createTextNode(i - firstday);
 					td.appendChild(child);
 					tr.appendChild(td);
@@ -134,6 +144,8 @@ function CalendarControl() {
 					td.style.backgroundColor = "#F5F5F5";
 					td.style.border = "1px solid black";
 					td.style.textAlign = "center";
+					td.id = new Intl.DateTimeFormat("en-GB").format(dates[i - firstday]);
+					td.onclick = function() { var e = document.getElementById("date_select"); e.value = this.id; document.getElementById("calendar_control").style.visibility = 'hidden'; }
 					child = document.createTextNode(i - firstday);
 					td.appendChild(child);
 					tr.appendChild(td);
@@ -145,7 +157,11 @@ function CalendarControl() {
 					td.style.backgroundColor = "#F5F5F5";
 					td.style.border = "1px solid black";
 					td.style.textAlign = "center";
+					td.id = new Intl.DateTimeFormat("en-GB").format(dates[i - firstday]);
+					td.onclick = function() { var e = document.getElementById("date_select"); e.value = this.id; document.getElementById("calendar_control").style.visibility = 'hidden'; }
 					child = document.createTextNode(i - firstday);
+					//alert(i-firstday);
+					//alert(dates[i - firstday]);
 					td.appendChild(child);
 					tr.appendChild(td);
 					tr = document.createElement("TR");
@@ -155,7 +171,11 @@ function CalendarControl() {
 					td.style.backgroundColor = "#F5F5F5";
 					td.style.border = "1px solid black";
 					td.style.textAlign = "center";
+					td.id = new Intl.DateTimeFormat("en-GB").format(dates[i - firstday]);
+					td.onclick = function() { var e = document.getElementById("date_select"); e.value = this.id; document.getElementById("calendar_control").style.visibility = 'hidden'; }
 					child = document.createTextNode(i - firstday);
+					//alert(i-firstday);
+					//alert(dates[i - firstday]);
 					td.appendChild(child);
 					tr.appendChild(td);
 				}
