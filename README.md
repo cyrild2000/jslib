@@ -1,3 +1,4 @@
 # jslib
-javascript library
-Contains dynamic controls for webpages written in Javascript
+Javascript Library
+
+Contains dynamic controls written in Javascript
