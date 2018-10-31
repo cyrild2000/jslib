@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    
+    function convertFahrenheitToCelsius(_inById){
+        var _element = document.getElementById(_inById);
+        var _parsed = Number.parseInt(_element.value, 10);
+        if(Number.isNaN(_parsed)) {
+            setErrorMessage('_msg', 'Incorrect value');
+            return;
+        }
+        var _result = Number.parseFloat((_parsed - 32) * (5/9)).toPrecision(6);
+        setSuccessMessage('_msg', 'Result is : ' + _result);
+    }
+
+    function setMessage(_idElement, _message){
+            document.getElementById(_idElement).textContent = _message;
+            document.getElementById(_idElement).style.width = '30%';
+        }
+
+        function setErrorMessage(_idElement, _message){
+            setMessage(_idElement, _message);
+            document.getElementById(_idElement).style.backgroundColor = 'red';
+            document.getElementById(_idElement).style.color = 'white';
+            
+        }
+
+        function setSuccessMessage(_idElement, _message){
+            setMessage(_idElement, _message);
+            document.getElementById(_idElement).style.backgroundColor = 'green';
+            document.getElementById(_idElement).style.color = 'white';
+        }
+   </script>
+</head>
+<body>
+    <h1>Convert Fahrenheit to Celsius</h1>
+    <h2>This program converts Fahrenheit to Celsius</h2>
+<form>
+<label>Fahrenheit : </label><input type="text" id="_inFahrentheit" size="25">
+<input type="button" onclick="convertFahrenheitToCelsius('_inFahrentheit');" value="Convert To Celsius">
+<p id="_msg"></p>
+</form>
+<h3>The main javascript function of the program</h3>
+<code>
+        function convertFahrenheitToCelsius(_inById){<br>
+            &nbsp;&nbsp;var _element = document.getElementById(_inById);<br>
+            &nbsp;&nbsp;var _parsed = Number.parseInt(_element.value, 10);<br>
+            &nbsp;&nbsp;if(Number.isNaN(_parsed)) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;setErrorMessage('_msg', 'Incorrect value');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;var result = Number.parseFloat((_parsed - 32) * (5/9)).toPrecision(6);<br>
+            &nbsp;&nbsp;setSuccessMessage('_msg', 'Result is : ' + result);<br>
+        }
+</code>
+</body>
+</html>
