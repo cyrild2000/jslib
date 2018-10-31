@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script>
+    
+        function isNotEmptyInput(_in){
+            if(document.getElementById(_in).value == ""){
+                return false;
+            }
+            return true;
+        }
+
+
+        function validateForm(_in){
+            if(isNotEmptyInput(_in)) {
+                setSuccessMessage('_msg','Correct entry.');
+            }
+            else {
+                setErrorMessage('_msg','Please enter a value and click send button');
+            }
+        }
+
+        function setMessage(_idElement, _message){
+            document.getElementById(_idElement).textContent = _message;
+            document.getElementById(_idElement).style.width = '30%';
+        }
+
+        function setErrorMessage(_idElement, _message){
+            setMessage(_idElement, _message);
+            document.getElementById(_idElement).style.backgroundColor = 'red';
+            document.getElementById(_idElement).style.color = 'white';
+            
+        }
+
+        function setSuccessMessage(_idElement, _message){
+            setMessage(_idElement, _message);
+            document.getElementById(_idElement).style.backgroundColor = 'green';
+            document.getElementById(_idElement).style.color = 'white';
+        }
+    </script>
+</head>
+<body>
+    <h1>Test input text not empty</h1>
+    <h2>If input text empty an error message is displayed else a success message is displayed</h2>
+<form>
+<input type="text" id="_inText" size="25">
+<input type="button" onclick="validateForm('_inText');" value="Send">
+<p id="_msg"></p>
+</form>
+</body>
+</html>
